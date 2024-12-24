@@ -7,7 +7,8 @@ This repository provides a Python implementation for computing and visualizing F
 - Calculates Forman-Ricci curvature for each edge using the formula:
 
   \[
-  F(e) = w_e \left( \frac{w_{v_1}}{w_e} - \sum_{e_{i, v_1} \sim e} \frac{w_{v_1}}{\sqrt{w_e w_{e_{i, v_1}}}} \right) + w_e \left( \frac{w_{v_2}}{w_e} - \sum_{e_{o, v_2} \sim e} \frac{w_{v_2}}{\sqrt{w_e w_{e_{o, v_2}}}} \right)
+F(e) = w_e * [ (w(v1) / w_e) - SUM( w(v1) / sqrt(w_e * w(e_i)) for e_i incoming to v1) ]
+       + w_e * [ (w(v2) / w_e) - SUM( w(v2) / sqrt(w_e * w(e_o)) for e_o outgoing from v2) ]
   \]
 
   Where:
